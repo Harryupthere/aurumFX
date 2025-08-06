@@ -1,0 +1,280 @@
+@import 'variables';
+
+.trader-row {
+  transition: all $transition-normal;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-1px);
+
+    .trader-avatar {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .account-balance {
+      color: $success-color;
+    }
+  }
+
+  td {
+    padding: $spacing-md $spacing-sm;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: $spacing-lg;
+    }
+
+    &:last-child {
+      padding-right: $spacing-lg;
+    }
+  }
+}
+
+.rank-cell {
+  position: relative;
+  
+  .rank-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $text-secondary;
+    min-width: 30px;
+    display: inline-block;
+
+    &.top-3 {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+.trader-info {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+
+  .trader-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    transition: all $transition-normal;
+    box-shadow: $shadow-sm;
+    flex-shrink: 0;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .trader-details {
+    .trader-name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: $text-primary;
+      margin-bottom: 2px;
+    }
+
+    .trader-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: $text-muted;
+    }
+  }
+}
+
+.account-balance {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: $text-primary;
+  transition: color $transition-fast;
+}
+
+.growth-cell {
+  .growth-percentage {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    transition: all $transition-fast;
+
+    &.positive {
+      color: $success-color;
+      background: rgba(0, 255, 136, 0.1);
+      border: 1px solid rgba(0, 255, 136, 0.2);
+
+      &::before {
+        content: '↗';
+        font-size: 0.875em;
+      }
+    }
+
+    &.negative {
+      color: $danger-color;
+      background: rgba(255, 71, 87, 0.1);
+      border: 1px solid rgba(255, 71, 87, 0.2);
+
+      &::before {
+        content: '↘';
+        font-size: 0.875em;
+      }
+    }
+
+    &.neutral {
+      color: $text-secondary;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      &::before {
+        content: '→';
+        font-size: 0.875em;
+      }
+    }
+  }
+}
+
+.platform-tag {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all $transition-fast;
+
+  &.mt4 {
+    background: rgba(66, 133, 244, 0.15);
+    color: $mt4-color;
+    border: 1px solid rgba(66, 133, 244, 0.3);
+  }
+
+  &.mt5 {
+    background: rgba(52, 168, 83, 0.15);
+    color: $mt5-color;
+    border: 1px solid rgba(52, 168, 83, 0.3);
+  }
+
+  &.ctrader {
+    background: rgba(234, 67, 53, 0.15);
+    color: $ctrader-color;
+    border: 1px solid rgba(234, 67, 53, 0.3);
+  }
+
+  .trader-row:hover & {
+    transform: translateY(-1px);
+    box-shadow: $shadow-sm;
+  }
+}
+
+// Mobile card styles
+.trader-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $card-border;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  transition: all $transition-normal;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+
+    .rank-badge {
+      background: rgba(255, 255, 255, 0.1);
+      color: $text-secondary;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius-sm;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 0.875rem;
+
+      &.top-3 {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 237, 78, 0.2));
+        color: #ffd700;
+      }
+    }
+  }
+
+  .card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-md;
+    align-items: center;
+
+    .balance-info {
+      .label {
+        font-size: 0.75rem;
+        color: $text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: $spacing-xs;
+      }
+
+      .value {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: $text-primary;
+      }
+    }
+
+    .growth-info {
+      .label {
+        font-size: 0.75rem;
+        color: $text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: $spacing-xs;
+      }
+    }
+  }
+
+  .card-footer {
+    margin-top: $spacing-md;
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .platform-info {
+      .label {
+        font-size: 0.75rem;
+        color: $text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: $spacing-xs;
+      }
+    }
+  }
+}

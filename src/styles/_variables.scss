@@ -1,0 +1,49 @@
+// Color Palette
+$primary-bg: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+$card-bg: rgb(16 16 16 / 65%);
+$card-border: rgba(255, 255, 255, 0.1);
+$text-primary: #ffffff;
+$text-secondary: #b4bcd0;
+$text-muted: #8892b0;
+
+// Status Colors
+$success-color: #00ff88;
+$success-glow: rgba(0, 255, 136, 0.3);
+$danger-color: #ff4757;
+$danger-glow: rgba(255, 71, 87, 0.3);
+$warning-color: #ffa726;
+$info-color: #42a5f5;
+
+// Platform Colors
+$mt4-color: #4285f4;
+$mt5-color: #34a853;
+$ctrader-color: #ea4335;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Border Radius
+$border-radius-sm: 8px;
+$border-radius-md: 12px;
+$border-radius-lg: 16px;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+$glow-effect: 0 0 20px rgba(255, 255, 255, 0.1);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large: 1440px;
