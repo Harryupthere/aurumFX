@@ -46,7 +46,7 @@ const TraderRow = ({ trader, rank }) => {
                 src={`https://flagcdn.com/24x18/${trader.country_name.toLowerCase()}.png`}
                 alt={trader.country_name}
                 title={trader.country_name}
-                style={{ borderRadius: '3px', width: 24, height: 18, objectFit: 'cover' }}
+                style={{ borderRadius: '3px', width: 28, objectFit: 'cover' }}
               />
             )}
           </div>
@@ -86,7 +86,7 @@ const TraderRow = ({ trader, rank }) => {
                 src={`https://flagcdn.com/24x18/${trader.country_name.toLowerCase()}.png`}
                 alt={trader.country_name}
                 title={trader.country_name}
-                style={{ borderRadius: '3px', width: 24, height: 18, objectFit: 'cover' }}
+                style={{ borderRadius: '3px', width: 28, objectFit: 'cover' }}
               />
             )}
           </div>
