@@ -5,6 +5,7 @@ import useApiRequest from "../hook/useApiRequest";
 import { API_ENDPOINTS } from "../constants/endPoints";
 import { useNavigate } from "react-router-dom";
 import { successMsg, errorMsg } from "../utils/customFn";
+
 const Leaderboard = () => {
     const { fetchData } = useApiRequest();
   const navigate = useNavigate();

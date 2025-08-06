@@ -1,4 +1,5 @@
 import '../styles/TraderRow.scss';
+import { allCountries } from 'country-telephone-data';
 
 const TraderRow = ({ trader, rank }) => {
 
@@ -39,16 +40,19 @@ const TraderRow = ({ trader, rank }) => {
       </td>
       <td>
         <div className="trader-info">
-          {/* <div className="trader-avatar">
-            {trader.avatar ? (
-              <img src={trader.avatar} alt={trader.name} />
-            ) : (
-              getInitials(trader.name)
+          <div className="trader-avatar">
+            {trader.country_name && (
+              <img
+                src={`https://flagcdn.com/24x18/${trader.country_name.toLowerCase()}.png`}
+                alt={trader.country_name}
+                title={trader.country_name}
+                style={{ borderRadius: '3px', width: 24, height: 18, objectFit: 'cover' }}
+              />
             )}
-          </div> */}
+          </div>
           <div className="trader-details">
             <div className="trader-name">{trader.name}</div>
-            {/* <div className="trader-id">ID: {trader.id}</div> */}
+            { }
           </div>
         </div>
       </td>
@@ -76,13 +80,16 @@ const TraderRow = ({ trader, rank }) => {
     <div className="trader-card">
       <div className="card-header">
         <div className="trader-info">
-          {/* <div className="trader-avatar">
-            {trader.avatar ? (
-              <img src={trader.avatar} alt={trader.name} />
-            ) : (
-              getInitials(trader.name)
+         <div className="trader-avatar">
+            {trader.country_name && (
+              <img
+                src={`https://flagcdn.com/24x18/${trader.country_name.toLowerCase()}.png`}
+                alt={trader.country_name}
+                title={trader.country_name}
+                style={{ borderRadius: '3px', width: 24, height: 18, objectFit: 'cover' }}
+              />
             )}
-          </div> */}
+          </div>
           <div className="trader-details">
             <div className="trader-name">{trader.name}</div>
             {/* <div className="trader-id">ID: {trader.id}</div> */}
